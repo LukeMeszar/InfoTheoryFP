@@ -1,0 +1,11 @@
+Stances:
+Percentage for Probably against NN: 0.21951219512195122
+Percentage for Probably for NN: 0.21951219512195122
+Percentage for For NN: 0.21951219512195122
+Percentage for Ambigious: 0.1951219512195122
+Percentage for Against NN: 0.14634146341463414
+Reasons:
+Percentage for Economic Reasons: 0.6829268292682927
+Percentage for Political Reasons: 0.24390243902439024
+Percentage for Other: 0.07317073170731707
+Percentage for Personal Reasons: 0.0
