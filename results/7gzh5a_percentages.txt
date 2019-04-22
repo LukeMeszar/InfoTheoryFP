@@ -1,0 +1,32 @@
+Stances:
+Percentage for Probably for NN: 0.4722222222222222
+Percentage for Ambigious: 0.3333333333333333
+Percentage for Against NN: 0.1111111111111111
+Percentage for Probably against NN: 0.05555555555555555
+Percentage for For NN: 0.027777777777777776
+Reasons:
+Percentage for Political Reasons: 0.6666666666666666
+Percentage for Economic Reasons: 0.16666666666666666
+Percentage for Other: 0.1388888888888889
+Percentage for Personal Reasons: 0.027777777777777776
+Combined Stance and Reason:
+Percentage for Probably for NN and Political Reasons: 0.3888888888888889
+Percentage for Ambigious and Political Reasons: 0.16666666666666666
+Percentage for Ambigious and Other: 0.08333333333333333
+Percentage for Probably for NN and Economic Reasons: 0.05555555555555555
+Percentage for Ambigious and Economic Reasons: 0.05555555555555555
+Percentage for Against NN and Political Reasons: 0.05555555555555555
+Percentage for Probably for NN and Other: 0.027777777777777776
+Percentage for Probably against NN and Political Reasons: 0.027777777777777776
+Percentage for Probably against NN and Economic Reasons: 0.027777777777777776
+Percentage for For NN and Political Reasons: 0.027777777777777776
+Percentage for Ambigious and Personal Reasons: 0.027777777777777776
+Percentage for Against NN and Other: 0.027777777777777776
+Percentage for Against NN and Economic Reasons: 0.027777777777777776
+Percentage for Probably for NN and Personal Reasons: 0.0
+Percentage for Probably against NN and Personal Reasons: 0.0
+Percentage for Probably against NN and Other: 0.0
+Percentage for For NN and Personal Reasons: 0.0
+Percentage for For NN and Other: 0.0
+Percentage for For NN and Economic Reasons: 0.0
+Percentage for Against NN and Personal Reasons: 0.0

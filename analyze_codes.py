@@ -54,20 +54,27 @@ def write_percentages(id, cartesian_product_percentages, stance_percentages, rea
     for idx in np.argsort(stance_percentages)[::-1]:
         out = 'Percentage for ' + codebook_stance[idx] + ': ' + str(stance_percentages[idx])
         stance_prints.append(out)
-    with open(id+'_percentages.txt', 'w') as f:
+    with open('results/'+id+'_percentages.txt', 'w') as f:
         for item in stance_prints:
             f.write(item+"\n")
     reason_prints = ['Reasons:']
     for idx in np.argsort(reason_percentages)[::-1]:
         out = 'Percentage for ' + codebook_reason[idx] + ': ' + str(reason_percentages[idx])
         reason_prints.append(out)
-    with open(id+'_percentages.txt', 'a') as f:
+    with open('results/'+id+'_percentages.txt', 'a') as f:
         for item in reason_prints:
             f.write(item+"\n")
-    product_prints = ['Combined Stance and Reason:']
+    product_prints = []
     c_product_shape = cartesian_product_counts.shape
     for i,j in it.product(np.arange(c_product_shape[0]), np.arange(c_product_shape[1])):
-        pass 
+        out = out = 'Percentage for ' + codebook_stance[i] + " and " + codebook_reason[j] \
+        + ': ' + str(cartesian_product_percentages[i,j])
+        product_prints.append(out)
+    _,product_prints = zip(*sorted(zip(cartesian_product_percentages.flatten(),product_prints)))
+    product_prints = ['Combined Stance and Reason:'] + list(reversed(list(product_prints)))
+    with open('results/'+id+'_percentages.txt', 'a') as f:
+        for item in product_prints:
+            f.write(item+"\n")
 
 
 if __name__ == '__main__':
@@ -75,10 +82,9 @@ if __name__ == '__main__':
     codebook_stance = {0: "For NN", 1: "Against NN", 2: "Probably for NN", 3: \
     "Probably against NN", 4: "Ambigious"}
     codebook_reason = {0: "Political Reasons", 1: "Economic Reasons", 2: "Personal Reasons", 3: "Other"}
-    cartesian_product_counts, stance_counts, reason_counts = get_counts_for_codes(id_list[0], 5,4)
-    # print(cartesian_product_counts, stance_counts, reason_counts)
-    #print(np.sum(cartesian_product_counts), np.sum(stance_counts), np.sum(reason_counts))
-    cartesian_product_percentages, stance_percentages, reason_percentages = \
-     get_percentages(cartesian_product_counts,stance_counts,reason_counts)
-    # print(cartesian_product_percentages, stance_percentages, reason_percentages)
-    write_percentages(id_list[0], cartesian_product_percentages, stance_percentages, reason_percentages)
+    for id in id_list:
+        cartesian_product_counts, stance_counts, reason_counts = \
+         get_counts_for_codes(id, len(codebook_stance),len(codebook_reason))
+        cartesian_product_percentages, stance_percentages, reason_percentages = \
+         get_percentages(cartesian_product_counts,stance_counts,reason_counts)
+        write_percentages(id, cartesian_product_percentages, stance_percentages, reason_percentages)
