@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb, amsmath, amsthm, amsfonts}
+\usepackage[alphabetic]{amsrefs}
+\usepackage{mathrsfs,comment}
+\usepackage{listings}
+\usepackage{mathptmx}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage[all,arc,2cell]{xy}
+\usepackage{enumerate}
+\usepackage{tcolorbox}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{MnSymbol}
+\usepackage{pdfpages}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+
+\usepackage{cleveref}
+
+\title{INFO 5601 Final Project \\ Analyzing Reddit Commenter's Opinions on Net Neutrality}
+\author{Luke Meszar}
+\date{}
+\begin{document}
+	\maketitle
+	\section{Introduction}\label{sec:intro}
+	Over the last few years, discussions around net neutrality have become more prevalent on the internet, including Reddit. The project aimed to study the public opinion of net neutrality on Reddit. In particular, to understand how opinions differed across different subreddits. In particular, subreddits that likely have different types of users. I choose a thread from five different subreddits and performed both a qualitative coding and sentiment analysis on the comments in each of these threads.
+	\section{Net Neutrality}\label{sec:nn}
+	Net neutrality has been a hotly debated topic recently with recent policy changes by the FCC. 
+	\section{Methodology}\label{sec:method}
+	The first choice that had to be made was which subreddits and which threads to consider. A few factors went into choosing this. First, a thread had to have a decent number of comments. A thread with only a handful of comments might not be the most representative of a subreddits overall opinions due to small sample size. The subreddits chosen to pick threads from was based on getting a diverse set of subreddits. 
+	
+	The five that were chosen were /r/askreddit, /r/technology, /r/books, /r/the\_donald, and /r/democrats. /r/askreddit was chosen because it is one of the largest subreddits, and likely has one of the most diverse user bases of any subreddit. The thread chosen was titled ``\textit{[Serious] Americans that *DO NOT* support net neutrality, why?}'' This article in particular was chosen because it asks what I assumed to be for the opposite opinion than the majority of Reddit users hold. I thought this would make for an interesting discussion from both sides. /r/technology was chosen because net neutrality is directly related to topic of the subreddit. The article chosen was ``\textit{Net neutrality day of action update: Twitter, Soundcloud, and Medium, have joined. Reddit, This could be as big as SOPA}'' primarily because it was one of the threads with the most comments. /r/books was chosen because it was a seemingly neutral subreddit. It is neither directly political or technology related. The thread chosen was ``\textit{Join the Battle for Net Neutrality!! We need to stop them from allowing ISPs to charge us extra fees to access ebooks, games or anything else!}'' The subreddits /r/the\_donald and /r/democrats were chosen for their clear political leanings. I realized they aren't exactly a fair comparison since one is about a specific president and the other is about a whole political party. However, because the thread chose for /r/democrats, ``\textit{This is President Barack Obama. He did not sell Americans out to the telecom lobby, but instead called upon on the FCC to take up the strongest possible rules to protect net neutrality, which they did at his instruction in 2015}'' is very much about Obama. The thread chosen from /r/the\_donald was ``\textit{One Year Later, `Net Neutrality' Zealots Proved Dead Wrong. `net neutrality' zealots warned that its repeal would spell doom for a `free and open" internet.}'''
+	
+	Once the threads were chosen, comment data was collected using the Reddit API and the Python wrapper praw. After this, open coding was done on 50 comments, with 10 coming from each post. Two types of codes where chosen to generally represent people's opinions on net neutrality: their stance on net neutrality and their reason for their stance. The following tables list the codes with a short description:
+		
+		
+		
+	\begin{small}
+		\begin{tabular}{l|l}
+			\multicolumn{1}{l}{\textbf{Codes for Stance on Net Neutrality}} & \\
+			Code & Description \\\hline
+			For NN & It is clear that the comment is for NN \\
+			Against NN & It is clear that the comment is for NN \\
+			Probably for NN & The comment's stance on NN is ambiguous but context says they are likely for NN \\
+			Probably against NN & The comment's stance on NN is ambiguous but context says they are likely against NN \\
+			Ambiguous & It is entirely unclear the comment's position on NN \\
+			\multicolumn{1}{l}{} & \ \\
+			\multicolumn{1}{l}{\textbf{Code for Reason for Stance}} & \\
+			Code  & Description \\\hline
+			Political Reasons & Primary reason stems from opinions of politicians, or general political views \\
+			Economic Reasons & Primary reason is driven by economic ideas like markets, monopolies\\
+			Personal Reasons & Primary reason is how it affects their lives individually  \\
+			Other & The other categories don't fit well
+		\end{tabular}
+	\end{small}
+	
+	
+	I originally tried a form of topic modeling known as Latent Dirichlet Allocation to find which comments were on topic. However, this proved ineffective since all the topics were too broad. I decided to write my own crude system to determine which comments were on topic. I created a dictionary containing terms like ``net neutrality, Comcast, ISPs'' etc. Using this dictionary, I filtered out comments that contained these words in them. 
+	
+	Then, I built a simple Python script that allowed me to go through each comment, choose whether to accept or reject it, and then choose a numerical code for each of the two codes presented above. Using these codes, I computed simple percentage statistics for all the codes and combinations of codes in each of the threads which is the basis of my results. Finally, I ran the pretrained sentiment analysis known as VADER \cite{hutto2014vader} on all the comments I coded.
+	%Run sentiment analysis on post titles
+	\section{Results}\label{sec:results}
+	\section{Analysis}\label{sec:analysis}
+	\section{Potential Biases}\label{sec:biases}
+	\section{Future Work}\label{sec:future}
+	\section{Conclusion}\label{sec:conclusion}
+	\section{Appendix}\label{sec:appendix}
+	\bibliographystyle{unsrt}
+	\bibliography{bibliography}
+\end{document}

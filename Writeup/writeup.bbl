@@ -1,0 +1,16 @@
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{hutto2014vader}{inproceedings}{
+      author={Hutto, Clayton~J},
+      author={Gilbert, Eric},
+       title={Vader: A parsimonious rule-based model for sentiment analysis of
+  social media text},
+        date={2014},
+   booktitle={Eighth international aaai conference on weblogs and social
+  media},
+}
+
+\end{biblist}
+\end{bibdiv}
