@@ -60,14 +60,57 @@ anchorcolor = blue]{hyperref}
 	
 	I originally tried a form of topic modeling known as Latent Dirichlet Allocation to find which comments were on topic. However, this proved ineffective since all the topics were too broad. I decided to write my own crude system to determine which comments were on topic. I created a dictionary containing terms like ``net neutrality, Comcast, ISPs'' etc. Using this dictionary, I filtered out comments that contained these words in them. 
 	
-	Then, I built a simple Python script that allowed me to go through each comment, choose whether to accept or reject it, and then choose a numerical code for each of the two codes presented above. Using these codes, I computed simple percentage statistics for all the codes and combinations of codes in each of the threads which is the basis of my results. Finally, I ran the pretrained sentiment analysis known as VADER \cite{hutto2014vader} on all the comments I coded.
+	Then, I built a simple Python script that allowed me to go through each comment, choose whether to accept or reject it, and then choose a numerical code for each of the two codes presented above. For all the threads except /r/democrats, I coded 41 comments. For /r/democrats, I only coded 38 because so many of the comments where off-topic. Using these codes, I computed simple percentage statistics for all the codes and combinations of codes in each of the threads which is the basis of my results. Finally, I ran the pretrained sentiment analysis known as VADER \cite{hutto2014vader} on all the comments I coded. For each comment, a compound score was given in the range $(-1,1)$ where a more negative number is a negative sentiment and a larger positive number is a more positive comment. I considered any comment with a compound score greater than 0.25 to be positive, anything with a compound score less than -0.25 negative, and everything else is considered neutral. From here, percentages for each category were calculated. I also ran the sentiment analysis on the thread titles. 
 	%Run sentiment analysis on post titles
 	\section{Results}\label{sec:results}
+	The complete results of all the percentages from the coding are long so they can be found in \cref{sec:appendix}. Here, only the top two codes from each category for each thread will be shown. 
+	\\[2\baselineskip]
+	\begin{tabular}{l|lc|lc}
+		\multicolumn{1}{l}{\textbf{/r/askreddit}} & & \multicolumn{1}{c}{Stance} & & \multicolumn{1}{c}{Reason}\\\hline
+		& Probably against NN & 21.9\% & Economic Reasons & 68.3\% \\
+		& Probably for NN & 21.8\% & Political Reasons & 24.4\% \\
+		\textbf{/r/technology}&&&&\\\hline
+		& For NN & 48.8\% & Political Reasons & 31.7\% \\
+		& Probably for NN & 36.6\% & Economic Reasons & 29.3\% \\
+		\textbf{/r/books}&&&&\\\hline
+		& Probably for NN & 48.8\% & Political Reasons & 34.1\% \\
+		& For NN & 29.3\% & Other & 26.8\% \\
+		\textbf{/r/democrats} &&&&\\\hline
+		& Probably for NN & 47.2\% & Political Reasons & 66.7\% \\
+		& Ambiguous & 33.3\% & Economic Reasons & 16.7\% \\
+		\textbf{/r/the\_donald}&&&&\\\hline
+		& Probably against NN & 65.9\% & Political Reasons & 63.4\% \\
+		& Against NN & 26.8\% & Other & 19.5\% \\
+	\end{tabular}
+	\\[2\baselineskip]
+	I am choosing not to report the most popular combinations of stance and reasons since they can almost always be inferred from the topic reason and stance separately. The sentiment analysis for the titles resulted in:
+	\\[2\baselineskip]
+	\begin{tabular}{l|cc}
+		& Compound Score & Sentiment \\
+		/r/askreddit & 0.4019 & Positive \\
+		/r/technology & 0.0 & Neutral \\
+		/r/books & -0.5386 & Negative \\
+		/r/democrats & 0.8074 & Positive \\
+		/r/the\_donald & -0.8885 & Negative
+	\end{tabular}
+	\\[2\baselineskip]
+	The results for the sentiment analysis are as follows:
+	\\[2\baselineskip]
+	\begin{tabular}{l|ccc}
+		& Positive & Neutral & Negative \\\hline
+		/r/askreddit & 53.7\% & 17.1\% & 29.3\% \\
+		/r/technology & 46.3\% & 24.4\% & 29.3\% \\
+		/r/books & 46.3\% & 19.5\% & 34.1\% \\
+		/r/democrats & 33.3\% & 11.1\% & 55.6\% \\
+		/r/the\_donald & 29.3\% & 26.8\% & 43.9\%
+	\end{tabular}
+
 	\section{Analysis}\label{sec:analysis}
 	\section{Potential Biases}\label{sec:biases}
 	\section{Future Work}\label{sec:future}
 	\section{Conclusion}\label{sec:conclusion}
 	\section{Appendix}\label{sec:appendix}
+	\textbf{Full results}
 	\bibliographystyle{unsrt}
 	\bibliography{bibliography}
 \end{document}
