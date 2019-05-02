@@ -9,6 +9,7 @@ from nltk.stem import WordNetLemmatizer, SnowballStemmer
 from nltk.stem.porter import *
 import numpy as np
 import nltk
+import csv
 
 def load_data(id):
     with open(id+'.pkl', 'rb') as f:
@@ -61,7 +62,12 @@ if __name__ == '__main__':
     nltk.download('wordnet')
     stemmer = SnowballStemmer('english')
     id_list = ['7ei3b1', '7en6do', 'adt1a3', '7gzh5a', '6ivklm']
-    comments = load_data(id_list[0])
+    comments = []
+    with open('/home/luke/TestCode/tech.csv') as csvfile:
+        readCSV = csv.reader(csvfile, delimiter=',')
+        counter = 0
+        for row in readCSV:
+            comments.append(row[0])
     processed_thread = process_thread(comments)
     dictionary = create_dictionary(processed_thread)
     bow_corpus = create_bow_corpus(dictionary, processed_thread)

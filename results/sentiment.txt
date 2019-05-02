@@ -1,24 +1,29 @@
 7ei3b1:
+Average compound score:  0.1403975609756098
 Counts:
 Pos:  22.0 Neu:  7.0 Neg:  12.0
 Percentages:
 Pos:  0.5365853658536586 Neu:  0.17073170731707318 Neg:  0.2926829268292683
 7en6do:
+Average compound score:  0.10189268292682925
 Counts:
 Pos:  19.0 Neu:  8.0 Neg:  14.0
 Percentages:
 Pos:  0.4634146341463415 Neu:  0.1951219512195122 Neg:  0.34146341463414637
 adt1a3:
+Average compound score:  -0.10121463414634144
 Counts:
 Pos:  12.0 Neu:  11.0 Neg:  18.0
 Percentages:
 Pos:  0.2926829268292683 Neu:  0.2682926829268293 Neg:  0.43902439024390244
 7gzh5a:
+Average compound score:  -0.21683611111111112
 Counts:
 Pos:  12.0 Neu:  4.0 Neg:  20.0
 Percentages:
 Pos:  0.3333333333333333 Neu:  0.1111111111111111 Neg:  0.5555555555555556
 6ivklm:
+Average compound score:  0.13193658536585368
 Counts:
 Pos:  19.0 Neu:  10.0 Neg:  12.0
 Percentages:

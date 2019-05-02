@@ -12,5 +12,14 @@
   media},
 }
 
+\bib{pearlstein_2018}{misc}{
+      author={Pearlstein, Joanna},
+       title={It's true: Tech workers overwhelmingly support democrats in
+  2018},
+   publisher={Wired},
+        date={2018},
+  url={https://www.wired.com/story/tech-workers-overwhelmingly-support-democrats/},
+}
+
 \end{biblist}
 \end{bibdiv}
