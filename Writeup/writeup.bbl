@@ -2,6 +2,16 @@
 \begin{bibdiv}
 \begin{biblist}
 
+\bib{hanna2018net}{article}{
+      author={Hanna, Mina~J},
+       title={Net neutrality: A brief overview of the policy and the fcc’s
+  ruling to upend it},
+        date={2018},
+     journal={Computer},
+      number={4},
+       pages={78\ndash 81},
+}
+
 \bib{hutto2014vader}{inproceedings}{
       author={Hutto, Clayton~J},
       author={Gilbert, Eric},
@@ -10,6 +20,28 @@
         date={2014},
    booktitle={Eighth international aaai conference on weblogs and social
   media},
+}
+
+\bib{hahn2006economics}{article}{
+      author={Hahn, Robert~W},
+      author={Wallsten, Scott},
+       title={The economics of net neutrality},
+        date={2006},
+     journal={The Economists' Voice},
+      volume={3},
+      number={6},
+}
+
+\bib{lee2009subsidizing}{article}{
+      author={Lee, Robin~S},
+      author={Wu, Tim},
+       title={Subsidizing creativity through network design: Zero-pricing and
+  net neutrality},
+        date={2009},
+     journal={Journal of Economic Perspectives},
+      volume={23},
+      number={3},
+       pages={61\ndash 76},
 }
 
 \bib{pearlstein_2018}{misc}{

@@ -29,7 +29,17 @@ anchorcolor = blue]{hyperref}
 	\section{Introduction}\label{sec:intro}
 	Over the last few years, discussions around net neutrality have become more prevalent on the internet, including Reddit. The project aimed to study the public opinion of net neutrality on Reddit. In particular, to understand how opinions differed across different subreddits. In particular, subreddits that likely have different types of users. I choose a thread from five different subreddits and performed both a qualitative coding and sentiment analysis on the comments in each of these threads.
 	\section{Net Neutrality}\label{sec:nn}
-	Net neutrality has been a hotly debated topic recently with recent policy changes by the FCC. 
+	Net neutrality has been a hotly debated topic recently with recent policy changes by the FCC. This section will provide background on what net neutrality is and the issues surrounding it. The debate stems from how ISPs and their broadband networks should be classified. The two options are as an information service under Title I of the 1934 Communications Act of as a Title II telecommunication service. The key difference is Title II gives the FCC the ability to regulate ISPs in an effort to protect consumers and online businesses against discrimination \cite{hanna2018net}. Since Congress has not yet written a bill deciding this matter, it is up to the FCC to make these decisions. In 2015, the FCC, under the Obama administration ruled to classify the internet as a Title II service. Then, in December 2017, the FCC, now under the Trump administration, ruled to reverse this decision. Clearly there has been disagreement on how the FCC should view the internet and net neutrality, particularly among party lines. So, what exactly is net neutrality?
+	
+	Roughly speaking, net neutrality says that ISPs should not be allowed to treat any discriminate any data that passes through their networks. This means that ISPs shouldn't be allowed to provide fast lanes for content they want to prioritize. To truly understand this, some of the economics of the internet need to be discussed. 
+	
+	First, the players need to be explained. There are the ISPs like Comcast and TimeWarner. Then there are the content providers like Amazon and Google. Finally, there are the consumers of thsi content, often average people. The first fact to realize is the ISPs are fundamentally operating in a two sided market. One side is the content providers, and the other is the content consumers. In two sided markets, it is important for there to be enough actors from both sides. For the internet, content providers wouldn't create content if there were no consumers to view it and no consumers would be online if there was no content for them to view. Clearly, ISPs need to work with both sides if they want any success. 
+	
+	Many of the largest content providers do not have to pay ISPs for their use of the internet as a means to reach other users \cite{lee2009subsidizing}. This is because, in practice, the internet does distinguish between content providers and content consumers. This obviously leads to ISPs feeling like they are not being payed what they are owed. Being allowed to charge content providers for the services they use and provide ``fast lanes'' they argue will provide a better outcome for consumers. First, the money obtained by ISPs by companies like Google and Amazon could be used to fund the construction and maintenance of better infrastructure. Providing fast lanes would allow important content to be prioritized. It could even be as simple as charging more for peak hours which is often done in other areas like electricity and tolls \cite{hahn2006economics}. 
+	
+	It is very easy to imagine a situation where this backfires on consumers. The first is ISPs decide that content providers they support will always get the fastest treatment and every other content provider is hindered. In this scenario, even companies like Google wouldn't be able to access the fast lane and the content on the internet becomes very fractured. The other option is just purely a huge financial cost on accessing the fast lanes. This means that only big companies like Google and Netflix would be able to pay for this. In either scenario, small content providers would never be able to succeed since they will never be able to afford the fast lanes. 
+	
+	A lot of the fear of this reality is due to the monopolistic natures of ISPs. Due to the high infrastructure start up cost and many local governments limiting competition, it can be impossible for competition to exist. With any monopoly, companies have no incentive to offer fair pricing for anything. One of the solutions \cite{hahn2006economics} proposes involves making it illegal for local governments to create monopolies. 
 	\section{Methodology}\label{sec:method}
 	The first choice that had to be made was which subreddits and which threads to consider. A few factors went into choosing this. First, a thread had to have a decent number of comments. A thread with only a handful of comments might not be the most representative of a subreddits overall opinions due to small sample size. The subreddits chosen to pick threads from was based on getting a diverse set of subreddits. 
 	
@@ -150,7 +160,7 @@ anchorcolor = blue]{hyperref}
 		/r/the\_donald & 0.788
 	\end{tabular}
 	\\[2\baselineskip]
-	The only conclusion is there were large differences between the sentiment of the tile and the sentiment of the comments in /r/books, /r/democrats, and /r/the\_donald. Whereas there were relatively small differences in /r/askreddit and /r/technology.
+	The only conclusion is there were large differences between the sentiment of the tile and the sentiment of the comments in /r/books, /r/democrats, and /r/the\_donald. Whereas there were relatively small differences in /r/askreddit and /r/technology. I wonder if the large difference in the political subreddits is caused by the general tendencies for political discussions to become so heated. It is hard to draw any conclusion from these two data points especially since the thread titles are almost completely opposite ends of the positive and negative spectrum.  
 	\section{Potential Biases}\label{sec:biases}
 	There are a number of things with the data used and how it was analyzed that likely led to incomplete results. The first is the small number of threads. It would have been better if there were more threads from the same subreddit, more subreddits, or both. This would give a more representative view of the opinions of people on Reddit. Two subreddits in particular to add would be /r/republicans and /r/obama as opposites of /r/democrats and /r/the\_donald respectively. 
 	
@@ -164,9 +174,345 @@ anchorcolor = blue]{hyperref}
 	
 	A last potential source of bias is the way the comments were scraped from the threads. The way the Reddit API's Python wrapper works, the hierarchy of comments is not preserved since a depth first traversal is employed when traversing the comment tree. This meant that comments didn't necessarily follow from their parents as they do when browsing Reddit normally. This removes any interaction and context between two different comments since it wasn't always possible to tell which comments were replying to another. On one hand, this could have removed some biases introduced by associating context of surrounding comments. Instead, I generally treated each comment in a vacuum within the thread. This same lack of context also could cause issues where a misunderstanding of someone's point causes me to miss code their comment. It is not clear what the effect of this loose comment ordering is. Maybe it would have been better to entirely randomize the comments so there is no discernible order. 
 	\section{Further Work}\label{sec:further}
+	The first thing to do would be to gather more data to get a more complete picture. It would be interesting if possible to be able to control for when the threads were posted. It would be interesting to see if people's opinions shifted significantly over time. Especially during the Obama administration and the Trump administration. 
+	
+	What would probably make this work better would to conduct surveys in each of the subreddits. Something with as neutral of a prompt as possible like ``What is Your Opinion on Net Neutrality?'' Then having a few simple questions that would fall into the categories above like stance and general reasoning. Finally, there could be a open ended response section. This would probably give a more accurate view of what each subreddits population think of net neutrality. 
 	\section{Conclusion}\label{sec:conclusion}
-	\section{Appendix}\label{sec:appendix}
-	\textbf{Full results}
+	This project looked to answer if different subreddits had generally different opinions on net neutrality. The answer was as expected. The generally left-leaning Reddit population was generally in support of net neutrality. This was seen primarily on the subreddits /r/technology, /r/books, and /r/democrats. Due to the nature of the question asked, /r/askreddit's thread was the most balanced one. The heavily conservative /r/the\_donald very strongly leaned toward being against net neutrality. 
+	
 	\bibliographystyle{unsrt}
 	\bibliography{bibliography}
+	\section{Appendix}\label{sec:appendix}
+	\large{\textbf{Full results:}}
+	
+	\textbf{/r/askreddit:}
+	
+	\textbf{Stances:}
+	
+	Percentage for Probably against NN: 0.21951219512195122
+	
+	Percentage for Probably for NN: 0.21951219512195122
+	
+	Percentage for For NN: 0.21951219512195122
+	
+	Percentage for Ambigious: 0.1951219512195122
+	
+	Percentage for Against NN: 0.14634146341463414
+	
+	\textbf{Reasons:}
+	
+	Percentage for Economic Reasons: 0.6829268292682927
+	
+	Percentage for Political Reasons: 0.24390243902439024
+	
+	Percentage for Other: 0.07317073170731707
+	
+	Percentage for Personal Reasons: 0.0
+	
+	\textbf{Combined Stance and Reason:}
+	
+	Percentage for Probably for NN and Economic Reasons: 0.1951219512195122
+	
+	Percentage for For NN and Economic Reasons: 0.17073170731707318
+	
+	Percentage for Probably against NN and Economic Reasons: 0.14634146341463414
+	
+	Percentage for Ambigious and Economic Reasons: 0.14634146341463414
+	
+	Percentage for Against NN and Political Reasons: 0.12195121951219512
+	
+	Percentage for Probably against NN and Political Reasons: 0.04878048780487805
+	
+	Percentage for Probably for NN and Political Reasons: 0.024390243902439025
+	
+	Percentage for Probably against NN and Other: 0.024390243902439025
+	
+	Percentage for For NN and Political Reasons: 0.024390243902439025
+	
+	Percentage for For NN and Other: 0.024390243902439025
+	
+	Percentage for Ambigious and Political Reasons: 0.024390243902439025
+	
+	Percentage for Ambigious and Other: 0.024390243902439025
+	
+	Percentage for Against NN and Economic Reasons: 0.024390243902439025
+	
+	Percentage for Probably for NN and Personal Reasons: 0.0
+	
+	Percentage for Probably for NN and Other: 0.0
+	
+	Percentage for Probably against NN and Personal Reasons: 0.0
+	
+	Percentage for For NN and Personal Reasons: 0.0
+	
+	Percentage for Ambigious and Personal Reasons: 0.0
+	
+	Percentage for Against NN and Personal Reasons: 0.0
+	
+	Percentage for Against NN and Other: 0.0
+	
+	\textbf{/r/technology:}
+	
+	\textbf{Stances:}
+	
+	Percentage for For NN: 0.4878048780487805
+	
+	Percentage for Probably for NN: 0.36585365853658536
+	
+	Percentage for Probably against NN: 0.07317073170731707
+	
+	Percentage for Against NN: 0.04878048780487805
+	
+	Percentage for Ambigious: 0.024390243902439025
+	
+	\textbf{Reasons:}
+	
+	Percentage for Political Reasons: 0.3170731707317073
+	
+	Percentage for Economic Reasons: 0.2926829268292683
+	
+	Percentage for Other: 0.2682926829268293
+	
+	Percentage for Personal Reasons: 0.12195121951219512
+	
+	\textbf{Combined Stance and Reason:}
+	
+	Percentage for Probably for NN and Economic Reasons: 0.14634146341463414
+	
+	Percentage for For NN and Other: 0.14634146341463414
+	
+	Percentage for For NN and Economic Reasons: 0.14634146341463414
+	
+	Percentage for For NN and Political Reasons: 0.12195121951219512
+	
+	Percentage for Probably for NN and Political Reasons: 0.0975609756097561
+	
+	Percentage for Probably for NN and Other: 0.07317073170731707
+	
+	Percentage for For NN and Personal Reasons: 0.07317073170731707
+	
+	Percentage for Probably for NN and Personal Reasons: 0.04878048780487805
+	
+	Percentage for Probably against NN and Political Reasons: 0.04878048780487805
+	
+	Percentage for Against NN and Political Reasons: 0.04878048780487805
+	
+	Percentage for Probably against NN and Other: 0.024390243902439025
+	
+	Percentage for Ambigious and Other: 0.024390243902439025
+	
+	Percentage for Probably against NN and Personal Reasons: 0.0
+	
+	Percentage for Probably against NN and Economic Reasons: 0.0
+	
+	Percentage for Ambigious and Political Reasons: 0.0
+	
+	Percentage for Ambigious and Personal Reasons: 0.0
+	
+	Percentage for Ambigious and Economic Reasons: 0.0
+	
+	Percentage for Against NN and Personal Reasons: 0.0
+	
+	Percentage for Against NN and Other: 0.0
+	
+	Percentage for Against NN and Economic Reasons: 0.0
+	
+	\textbf{/r/books:}
+	
+	\textbf{Stances:}
+	
+	Percentage for Probably for NN: 0.4878048780487805
+	
+	Percentage for For NN: 0.2926829268292683
+	
+	Percentage for Ambigious: 0.17073170731707318
+	
+	Percentage for Probably against NN: 0.04878048780487805
+	
+	Percentage for Against NN: 0.0
+	
+	\textbf{Reasons:}
+	
+	Percentage for Political Reasons: 0.34146341463414637
+	
+	Percentage for Other: 0.2682926829268293
+	
+	Percentage for Economic Reasons: 0.24390243902439024
+	
+	Percentage for Personal Reasons: 0.14634146341463414
+	
+	\textbf{Combined Stance and Reason:}
+	
+	Percentage for Probably for NN and Political Reasons: 0.17073170731707318
+	
+	Percentage for Probably for NN and Other: 0.12195121951219512
+	
+	Percentage for Probably for NN and Personal Reasons: 0.0975609756097561
+	
+	Percentage for Probably for NN and Economic Reasons: 0.0975609756097561
+	
+	Percentage for For NN and Political Reasons: 0.0975609756097561
+	
+	Percentage for For NN and Economic Reasons: 0.0975609756097561
+	
+	Percentage for For NN and Other: 0.07317073170731707
+	
+	Percentage for Ambigious and Other: 0.07317073170731707
+	
+	Percentage for Probably against NN and Political Reasons: 0.04878048780487805
+	
+	Percentage for Ambigious and Economic Reasons: 0.04878048780487805
+	
+	Percentage for For NN and Personal Reasons: 0.024390243902439025
+	
+	Percentage for Ambigious and Political Reasons: 0.024390243902439025
+	
+	Percentage for Ambigious and Personal Reasons: 0.024390243902439025
+	
+	Percentage for Probably against NN and Personal Reasons: 0.0
+	
+	Percentage for Probably against NN and Other: 0.0
+	
+	Percentage for Probably against NN and Economic Reasons: 0.0
+	
+	Percentage for Against NN and Political Reasons: 0.0
+	
+	Percentage for Against NN and Personal Reasons: 0.0
+	
+	Percentage for Against NN and Other: 0.0
+	
+	Percentage for Against NN and Economic Reasons: 0.0
+	
+	\textbf{/r/democrats:}
+	
+	\textbf{Stances:}
+	
+	Percentage for Probably for NN: 0.4722222222222222
+	
+	Percentage for Ambigious: 0.3333333333333333
+	
+	Percentage for Against NN: 0.1111111111111111
+	
+	Percentage for Probably against NN: 0.05555555555555555
+	
+	Percentage for For NN: 0.027777777777777776
+	
+	\textbf{Reasons:}
+	
+	Percentage for Political Reasons: 0.6666666666666666
+	
+	Percentage for Economic Reasons: 0.16666666666666666
+	
+	Percentage for Other: 0.1388888888888889
+	
+	Percentage for Personal Reasons: 0.027777777777777776
+	
+	\textbf{Combined Stance and Reason:}
+	
+	Percentage for Probably for NN and Political Reasons: 0.3888888888888889
+	
+	Percentage for Ambigious and Political Reasons: 0.16666666666666666
+	
+	Percentage for Ambigious and Other: 0.08333333333333333
+	
+	Percentage for Probably for NN and Economic Reasons: 0.05555555555555555
+	
+	Percentage for Ambigious and Economic Reasons: 0.05555555555555555
+	
+	Percentage for Against NN and Political Reasons: 0.05555555555555555
+	
+	Percentage for Probably for NN and Other: 0.027777777777777776
+	
+	Percentage for Probably against NN and Political Reasons: 0.027777777777777776
+	
+	Percentage for Probably against NN and Economic Reasons: 0.027777777777777776
+	
+	Percentage for For NN and Political Reasons: 0.027777777777777776
+	
+	Percentage for Ambigious and Personal Reasons: 0.027777777777777776
+	
+	Percentage for Against NN and Other: 0.027777777777777776
+	
+	Percentage for Against NN and Economic Reasons: 0.027777777777777776
+	
+	Percentage for Probably for NN and Personal Reasons: 0.0
+	
+	Percentage for Probably against NN and Personal Reasons: 0.0
+	
+	Percentage for Probably against NN and Other: 0.0
+	
+	Percentage for For NN and Personal Reasons: 0.0
+	
+	Percentage for For NN and Other: 0.0
+	
+	Percentage for For NN and Economic Reasons: 0.0
+	
+	Percentage for Against NN and Personal Reasons: 0.0
+	
+	\textbf{/r/the\_donald:}
+	
+	\textbf{Stances:}
+	
+	Percentage for Probably against NN: 0.6585365853658537
+	
+	Percentage for Against NN: 0.2682926829268293
+	
+	Percentage for Ambigious: 0.07317073170731707
+	
+	Percentage for Probably for NN: 0.0
+	
+	Percentage for For NN: 0.0
+	
+	\textbf{Reasons:}
+	
+	Percentage for Political Reasons: 0.6341463414634146
+	
+	Percentage for Other: 0.1951219512195122
+	
+	Percentage for Economic Reasons: 0.14634146341463414
+	
+	Percentage for Personal Reasons: 0.024390243902439025
+	
+	\textbf{Combined Stance and Reason:}
+	
+	Percentage for Probably against NN and Political Reasons: 0.3902439024390244
+	
+	Percentage for Against NN and Political Reasons: 0.21951219512195122
+	
+	Percentage for Probably against NN and Other: 0.14634146341463414
+	
+	Percentage for Probably against NN and Economic Reasons: 0.12195121951219512
+	
+	Percentage for Against NN and Other: 0.04878048780487805
+	
+	Percentage for Ambigious and Political Reasons: 0.024390243902439025
+	
+	Percentage for Ambigious and Personal Reasons: 0.024390243902439025
+	
+	Percentage for Ambigious and Economic Reasons: 0.024390243902439025
+	
+	Percentage for Probably for NN and Political Reasons: 0.0
+	
+	Percentage for Probably for NN and Personal Reasons: 0.0
+	
+	Percentage for Probably for NN and Other: 0.0
+	
+	Percentage for Probably for NN and Economic Reasons: 0.0
+	
+	Percentage for Probably against NN and Personal Reasons: 0.0
+	
+	Percentage for For NN and Political Reasons: 0.0
+	
+	Percentage for For NN and Personal Reasons: 0.0
+	
+	Percentage for For NN and Other: 0.0
+	
+	Percentage for For NN and Economic Reasons: 0.0
+	
+	Percentage for Ambigious and Other: 0.0
+	
+	Percentage for Against NN and Personal Reasons: 0.0
+	
+	Percentage for Against NN and Economic Reasons: 0.0
+	
 \end{document}
